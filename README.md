@@ -49,12 +49,15 @@ Any method annotated with `@Loggable` will be automatically logged.
 2. Run the application with your favorite IDE or `mvn spring-boot:run`.
 3. Use the following `curl` commands to test the endpoints:
 
-### ➕ Create a Transaction
+### ➕ Create an Account
 ```bash
-curl --location 'localhost:8080/transactions' --header 'Content-Type: application/json' --data '{
-    "account_id": "b39f1b0f-204a-401a-a03e-6092f861fe55",
-    "operation_type_id": 1,
-    "amount": 555.34
+curl --location 'http://localhost:8080/accounts' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--data '{
+    "username": "johndoe",
+    "password": "securePassword123",
+    "id": "a8bdb935-6bac-4621-94f3-bacbf69e4409"
 }'
 ```
 
